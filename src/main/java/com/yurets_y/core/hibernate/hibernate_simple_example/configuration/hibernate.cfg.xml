@@ -26,7 +26,8 @@
         <property name="hibernate.dbcp.minIdle">5</property>
         <property name="hibernate.dbcp.maxWaitMillis">-1</property>
 
-        <mapping class="com.yurets_y.core.hibernate.hibernate_simple_example.entity.User" />
-        <mapping class="com.yurets_y.core.hibernate.hibernate_simple_example.entity.Auto" />
+        <!--<mapping class="com.yurets_y.core.hibernate.hibernate_simple_example.entity.User" />-->
+        <!--<mapping class="com.yurets_y.core.hibernate.hibernate_simple_example.entity.Auto" />-->
+
     </session-factory>
 </hibernate-configuration>

@@ -16,7 +16,8 @@ public class HibernateSessionFactoryUtil {
     public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
             try {
-                File configFile = new File("com/yurets_y/core/hibernate/hibernate_simple_example/configuration/hibernate.cfg.xml");
+                File configFile = new File("src/main/java/com/yurets_y/core/hibernate/hibernate_simple_example/configuration/hibernate.cfg.xml");
+                System.out.println(configFile.exists());
                 Configuration configuration = new Configuration().configure(configFile);
                 configuration.addAnnotatedClass(User.class);
                 configuration.addAnnotatedClass(Auto.class);//TODO попробовать удалить
