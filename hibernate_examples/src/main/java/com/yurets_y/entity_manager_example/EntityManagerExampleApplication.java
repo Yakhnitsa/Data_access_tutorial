@@ -7,11 +7,25 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.util.Date;
+import java.util.List;
 
 public class EntityManagerExampleApplication {
     public static void main(String[] args) {
-        createEntityManager();
+//        createEntityManager();
+        readFromDb();
     }
+
+    private static void readFromDb(){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("entity-manager-example-persistence");
+        EntityManager entityManager = emf.createEntityManager();
+        entityManager.getTransaction().begin();
+
+        List<SimpleEntity> entityList = entityManager.createQuery("from SimpleEntity",SimpleEntity.class).getResultList();
+
+        System.out.println("Found entities " + entityList.size());
+        entityList.forEach(System.out::println);
+    }
+
 
     private static void createEntityManager(){
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("entity-manager-example-persistence");
