@@ -25,6 +25,28 @@
             <!--<property name="connection.username" value="sa"/>-->
             <!--<property name="connection.password" value="sa"/>-->
         </properties>
+    </persistence-unit>
+
+    <!--Persistence unit for lazy_initialization_example-->
+
+    <persistence-unit name="lazy-init-example-persistence">
+        <!--Прописываем классы, попадающие в маппинк-->
+        <class>com.yurets_y.lazy_init_example.entity.HeadEntity</class>
+        <class>com.yurets_y.lazy_init_example.entity.ChildrenEntity</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
+
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:file:./src/main/resources/databases/lazy_init_example_db"/>
+            <property name="javax.persistence.jdbc.user" value="sa" />
+            <property name="javax.persistence.jdbc.password" value="" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <property name="show_sql" value="true"/>
+
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+
+        </properties>
 
 
 
