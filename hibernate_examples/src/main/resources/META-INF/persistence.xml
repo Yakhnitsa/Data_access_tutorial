@@ -17,7 +17,7 @@
             <property name="javax.persistence.jdbc.user" value="sa" />
             <property name="javax.persistence.jdbc.password" value="" />
             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
-            <property name="show_sql" value="true"/>
+            <property name = "hibernate.show_sql" value = "true" />
 
             <property name="hibernate.hbm2ddl.auto" value="update"/>
 
@@ -42,9 +42,38 @@
             <property name="javax.persistence.jdbc.user" value="sa" />
             <property name="javax.persistence.jdbc.password" value="" />
             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
-            <property name="show_sql" value="true"/>
+            <property name = "hibernate.show_sql" value = "true" />
 
             <property name="hibernate.hbm2ddl.auto" value="update"/>
+
+        </properties>
+
+
+
+    </persistence-unit>
+
+    <persistence-unit name="one_to_many_mapping_persistence">
+        <!--Прописываем классы, попадающие в маппинк-->
+        <class>com.yurets_y.mapping.one_to_many.bidirectional.HeadEntityBidir</class>
+        <class>com.yurets_y.mapping.one_to_many.bidirectional.SubEntityBidir</class>
+
+        <class>com.yurets_y.mapping.one_to_many.unidirectional.one_to_many.HeadEntityOtM</class>
+        <class>com.yurets_y.mapping.one_to_many.unidirectional.one_to_many.SubEntityOtM</class>
+
+        <class>com.yurets_y.mapping.one_to_many.unidirectional.many_to_one.HeadEntityMtO</class>
+        <class>com.yurets_y.mapping.one_to_many.unidirectional.many_to_one.SubEntityMtO</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
+
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:file:./src/main/resources/databases/mapping/one_to_many_mapping_db"/>
+            <property name="javax.persistence.jdbc.user" value="sa" />
+            <property name="javax.persistence.jdbc.password" value="" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <property name = "hibernate.show_sql" value = "true" />
+
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
 
         </properties>
 
