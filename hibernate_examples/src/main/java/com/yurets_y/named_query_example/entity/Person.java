@@ -35,6 +35,13 @@ public class Person {
         this.dateOfBirth = dateOfBirth;
     }
 
+    public Person(String name, String lastName, int salary, Date dateOfBirth) {
+        this.name = name;
+        this.lastName = lastName;
+        this.salary = salary;
+        this.dateOfBirth = dateOfBirth;
+    }
+
     public Long getId() {
         return id;
     }
@@ -73,5 +80,16 @@ public class Person {
 
     public void setSalary(int salary) {
         this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", salary=" + salary +
+                ", dateOfBirth=" + dateOfBirth +
+                '}';
     }
 }
