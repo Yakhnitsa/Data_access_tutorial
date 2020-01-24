@@ -17,8 +17,6 @@ public class NamedQueryApplication {
     public static void main(String[] args) throws Exception {
         initDB();
         executeQueries();
-
-
         en.close();
     }
 
